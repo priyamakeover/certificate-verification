@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Verify Certificate - Priya Makeover</title>
+</head>
+<body>
+  <h2>Verify Your Certificate</h2>
+  <input type="text" id="certInput" placeholder="Enter Certificate No" />
+  <button onclick="verify()">Verify</button>
+  <pre id="result"></pre>
+
+  <script>
+    function verify() {
+      var cert = document.getElementById("certInput").value;
+      var url = `https://script.google.com/macros/s/AKfycb.../exec?cert=${cert}`; // your script URL
+
+      fetch(url)
+        .then(response => response.text())
+        .then(text => document.getElementById("result").innerText = text)
+        .catch(err => document.getElementById("result").innerText = "❌ Error verifying certificate.");
+    }
+  </script>
+</body>
+</html>
