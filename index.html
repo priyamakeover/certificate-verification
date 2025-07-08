@@ -12,8 +12,7 @@
   <script>
     function verify() {
       var cert = document.getElementById("certInput").value;
-      var url = `https://script.google.com/macros/s/AKfycb.../exec?cert=${cert}`; // your script URL
-
+      var url = `https://script.google.com/macros/s/AKfycbxdyDjaEoJq2JfjmpOG5LN57zZge1u5Y8rghhPVicG3X2eNJnnL6FK2pGSOBFIR/exec?cert=${cert}`;
       fetch(url)
         .then(response => response.text())
         .then(text => document.getElementById("result").innerText = text)
